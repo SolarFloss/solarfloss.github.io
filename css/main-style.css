@@ -160,8 +160,8 @@ div#project-row{
 
 /*
   Mobile
-
-@media (max-width:67em) {
+*/
+@media (max-width:63.5em) {
   div#project-row .project-title{
     font-weight: bold;
     font-size: 4vw;
@@ -180,4 +180,3 @@ div#project-row{
     margin-bottom: 100px;
   }
 }
-*/
