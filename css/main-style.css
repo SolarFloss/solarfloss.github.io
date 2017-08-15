@@ -95,7 +95,7 @@ a{
 .name a{
   color: black;
   text-decoration: none;
-  font-size: 15pt;
+  font-size: 1.5em;
 }
 
 .name a:hover{
@@ -111,7 +111,7 @@ div#projects-container{
 }
 
 div#projects-container p{
-  font-size: 15pt;
+  font-size: 20pt;
   margin-bottom: 100px;
 }
 
@@ -156,3 +156,28 @@ div#project-row{
   margin-bottom: 0px;
   margin:auto;
 }
+
+
+/*
+  Mobile
+
+@media (max-width:67em) {
+  div#project-row .project-title{
+    font-weight: bold;
+    font-size: 4vw;
+  }
+  div#project-row .project p{
+    font-size: 4vw;
+  }
+  .name a{
+    font-size: 2.5vh;
+  }
+  nav li i{
+    height: 5vh;
+  }
+  div#projects-container p{
+    font-size: 3vw;
+    margin-bottom: 100px;
+  }
+}
+*/
