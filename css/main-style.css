@@ -120,6 +120,7 @@ div#projects-container p{
   Project Item
 */
 div#project-row .project{
+  padding-top: 15px;
   text-decoration: none;
   color: black;
   transition: all ease 0.5s;
