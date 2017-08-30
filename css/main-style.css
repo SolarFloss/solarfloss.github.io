@@ -18,6 +18,8 @@ header#header{
     font-family: 'Quicksand';
     margin-bottom: 15px;
     width: 100%;
+    transition: all ease 0.5s;
+    z-index: 3;
 }
 
 header a svg{
@@ -76,6 +78,15 @@ button#menu-button{
   outline: none;
   display: none;
   float:right;
+  transition: all linear .3s;
+}
+
+button#menu-button:hover{
+  transform: translateY(-1px);
+}
+
+button#menu-button:active{
+  transform: translateY(2px);
 }
 
 header#header nav{
@@ -133,6 +144,7 @@ div#recents-container{
   margin-left: auto;
   margin-right: auto;
   overflow-y: scroll;
+  transition: all ease 0.5s;
 }
 
 div#options-wrapper{
@@ -192,10 +204,15 @@ div#accordion-wrapper{
   top: 75px;
   height: auto;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
   text-align: center;
   background-color: #fffcfc;
   transition: all ease .5s;
+}
+
+div#accordion-wrapper.ng-hide{
+  transition: all ease .5s;
+  opacity: 0;
 }
 
 div#accordion-wrapper ul{
@@ -206,7 +223,7 @@ div#accordion-wrapper ul{
 
 div#accordion-wrapper li{
   padding: 10px;
-  border-bottom: solid 1px #e0e0e0;
+  border-bottom: solid 2px #e0e0e0;
   width: 100%;
   list-style: none;
   font-size: 15pt;
@@ -215,6 +232,7 @@ div#accordion-wrapper li{
   margin:auto;
   left: 0;
   color: #0f6bff;
+  transition: all ease .5s;
 }
 
 
