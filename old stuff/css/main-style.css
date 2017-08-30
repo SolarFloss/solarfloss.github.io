@@ -1,0 +1,196 @@
+@font-face{
+    font-family: Gravity-Book;
+    src: url(../fonts/Gravity-Book.otf) ;
+}
+
+@font-face{
+    font-family: Gravity-Light;
+    src: url(../fonts/Gravity-Light.otf) ;
+}
+
+
+
+/*
+  Scrollbar
+*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+/*
+  Outline
+*/
+.main-wrapper{
+  margin: auto;
+  margin: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  position: fixed;
+  border: 5px solid #68a0f9;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+
+/*
+  Header
+*/
+header{
+  padding: 15px 0px;
+  margin-bottom: 100px;
+}
+
+
+/*
+  Top Nav
+*/
+nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+nav ul li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a{
+  color: black;
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  color: #68a0f9;
+}
+
+nav ul li:last-child{
+  margin-right: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a{
+  font-family: Gravity-Book;
+}
+
+
+/*
+  Name
+*/
+.name a{
+  color: black;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.name a:hover{
+  color: #68a0f9;
+}
+
+
+/*
+  Projects Header
+*/
+div#projects-container{
+  text-align: center;
+}
+
+div#projects-container p{
+  font-size: 20pt;
+  margin-bottom: 100px;
+}
+
+
+/*
+  Project Item
+*/
+div#project-row .project{
+  padding-top: 20px;
+  text-decoration: none;
+  color: black;
+  transition: all ease 0.5s;
+}
+
+div#project-row .project:hover{
+  color: #68a0f9;
+  transform: translateY(-1px);
+  box-shadow: 0px 1px 5px #888888;
+}
+
+div#project-row .project p{
+  margin-bottom: 50px;
+}
+
+div#project-row .project-title{
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+
+div#project-row .project-description{
+  font-size: 12pt;
+  color: #777676;
+}
+
+
+
+/*
+  Projects Row
+*/
+div#project-row{
+  margin-bottom: 0px;
+  margin:auto;
+}
+
+.icon{
+  font-size: 2em;
+}
+
+
+
+
+/*
+  Mobile
+*/
+@media (max-width:1022px) {
+  div#project-row .project-title{
+    font-weight: bold;
+    font-size: 4vw;
+  }
+  div#project-row .project p{
+    font-size: 4vw;
+  }
+  .name a{
+    font-size: 2.5vh;
+  }
+  nav li i{
+    height: 5vh;
+  }
+  div#projects-container p{
+    font-size: 3vw;
+    margin-bottom: 100px;
+  }
+  div#projects-container svg{
+    width: 50px;
+    height: 50px;
+  }
+  nav svg{
+    width: 50px;
+    height: 50px;
+  }
+}

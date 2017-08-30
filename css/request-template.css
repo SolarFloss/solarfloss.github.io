@@ -1,0 +1,49 @@
+.request{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  height: auto;
+  border-bottom: 1px solid #e0e0e0;
+  max-width: 95%;
+  text-align: left;
+}
+
+.wrapper{
+  margin-bottom: 15px;
+}
+
+.request-title{
+  color: #0062ff;
+  text-align: left;
+  font-family: 'Quicksand';
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16pt;
+}
+
+.request-price,
+.request-tags-label{
+  color: #828282;
+  text-align: left;
+  font-family: 'Quicksand';
+  text-decoration: none;
+  font-size: 11pt;
+}
+
+
+.request-tags-label{
+  margin-right: 10px;
+}
+
+.request-tag{
+  padding: 5px;
+  margin-right: 5px;
+  background-color: #777777;
+  border-radius: 3px;
+  color: white;
+  font-weight: lighter;
+}
+
+.request-tag:hover{
+  background-color: #0060ff;
+}

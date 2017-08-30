@@ -1,83 +1,91 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <title>Welcome</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Deed - Share a Meal</title>
+    <!--CSS-->
     <link type="text/css" rel="stylesheet" href="css/main-style.css">
-    <!--At some point switch from using CDN-->
+    <link type="text/css" rel="stylesheet" href="css/resize.css">
+    <link type="text/css" rel="stylesheet" href="css/request-template.css">
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css">
-    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+
+    <!--Scripts-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/main-script.js"></script>
+    <script type="text/javascript" src="scripts/controllers/request-controller.js"></script>
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   </head>
-  <body>
-    <div class="main-wrapper">
-      <header class="large-12 column" id="header">
-        <div class="small-4 medium-4 large-4 column">
-          <div class="name">
-            <a href="#">Nick Morris</a>
-          </div>
+  <body id="main-container" ng-app="main-app">
+    <header class="large-12 medium-12 row expanded" id="header" ng-app="header-controller">
+      <div class="large-5 medium-6 small-10 column rows">
+        <span id="title">
+          <a href="#">Make Someone's Day</a>
+        </span>
+      </div>
+      <nav class="medium-6 small-4 column" id="nav-bar">
+        <ul>
+          <li><a href="#"><i data-feather="help-circle"></i>About</a></li>
+          <li><a href="#"><i data-feather="plus"></i>Request</a></li>
+          <li class="active"><a href="#"><i data-feather="home"></i>Home</a></li>
+        </ul>
+      </nav>
+      <nav class="small-2 medium-1 column">
+        <button id="menu-button" ng-click="menuOpen = !menuOpen"><i data-feather="menu"></i></button>
+      </nav>
+      <div id="accordion-wrapper" ng-show="menuOpen">
+        <ul>
+          <a href="#"><li><i data-feather="home"></i>Home</li></a>
+          <a href="#"><li><i data-feather="plus"></i>Request</li></a>
+          <a href="#"><li><i data-feather="help-circle"></i>About</li></a>
+        </ul>
+        <div id="click-overlay" ng-click="menuOpen = false"></div>
+      </div>
+    </header>
+
+    <div class="large-12 medium-12 row" id="recents-label">
+      <span>
+        Recent Requests
+      </span>
+    </div>
+    <div class="large-11 medium-12 small-12 expanded row" id="recents-container" ng-controller="request-controller">
+      <div class="large-12 medium-12 expanded row columns" id="options-wrapper">
+        <div class="large-6 medium-6 small-12 column" id="search-wrapper">
+          <i data-feather="filter" ></i>
+          <input placeholder="Filter.." id="search" ></input>
         </div>
-        <nav class="small-8 medium-8 large-8 column">
-          <ul>
-            <li><a href="https://www.youtube.com/channel/UCLNQaRmFlvo4a8tNMCoqKIw"><i data-feather="video"></i></a></li>
-            <li><a href="https://twitter.com/Nickels_7"><i data-feather="twitter"></i></a></li>
-            <li><a href="https://github.com/SolarFloss"><i data-feather="github"></i></a></li>
-          </ul>
-        </nav>
-      </header>
-      <div class="small-12 large-12 column" id="projects-container">
-        <h1>Hello!</h1>
-        <p>I try to make cool things from time to time</p>
-        <div class="small-12 medium-12 large-8 row" id="project-row" >
-          <a class="small-12 large-3 column project" href="https://github.com/SolarFloss/Reach-Podcast-Player">
-            <i class="icon" data-feather="radio">f</i>
-            <h6 class="project-title">Reach Podcast Player</h6>
-            <p class="project-description">This is a rss-based podcast player made in electron and angular!</p>
-          </a>
-          <a class="small-12 large-3 column project" href="https://github.com/SolarFloss/Slayer">
-            <i data-feather="zap"></i>
-            <h6 class="project-title">Slayer</h6>
-            <p class="project-description">Twitter game where you get together with up to 10 strangers and fight a boss!</p>
-          </a>
-          <a class="small-12 large-3 column project" href="https://github.com/SolarFloss/OdysseySMS-Desktop-">
-            <i data-feather="smartphone"></i>
-            <h6 class="project-title">Odyssey/Illiad SMS</h6>
-            <p class="project-description">Desktop application that works with IliadSMS(Android Client), allowing me to text from desktop</p>
-          </a>
-          <a class="small-12 large-3 column project" href="https://github.com/SolarFloss/Dashboard">
-            <i data-feather="tv"></i>
-            <h6 class="project-title">Dashboard</h6>
-            <p class="project-description">A dashboard-esque display that is on my TV that runs on a raspberry pi</p>
-          </a>
+        <div class="large-6 medium-6 small-12 columns column" id="dropdown-wrapper">
+          <span class="small-2 medium-2">Sort By:</span>
+          <select class="small-8 medium-8">
+            <option value="Newest">Newest</option>
+            <option value="Popular">Popular</option>
+          </select>
         </div>
-        <!--Terrible Idead Here-->
-        <div class="small-12 medium-12 large-8 row" id="project-row" >
-          <a class="small-12 large-3 column project" href="https://github.com/SolarFloss/Enhancement-Suite">
-            <i data-feather="eye"></i>
-            <h6 class="project-title">Enhancement Suite</h6>
-            <p class="project-description">Stopping bullying and harrasment is hard, so we got parents to help us out (Hackathon Entry)</p>
-          </a>
-          <a class="small-12  large-3 column project" href="https://github.com/SolarFloss/Maze-Solving-and-Generating">
-            <i data-feather="compass"></i>
-            <h6 class="project-title">Maze Generator/Solver</h6>
-            <p class="project-description">Generates and solves mazes using DFS and Randomized Prim's Algorithm</p>
-          </a>
-          <a class="small-12  large-3 column project" href="https://github.com/SolarFloss/Chat-Room">
-            <i data-feather="message-square"></i>
-            <h6 class="project-title">Java Chatroom Client</h6>
-            <p class="project-description">Basic chatroom client that allows users to talk over a shared directory</p>
-          </a>
-          <a class="small-12  large-3 column project" href="https://github.com/SolarFloss/My-Two-Cents">
-            <i data-feather="shopping-cart"></i>
-            <h6 class="project-title">My Two Cents</h6>
-            <p class="project-description">An app that can earn ~$0.02 a day in bitcoin <i>if it's left running 24/7 :P</i></p>
-          </a>
+      </div>
+      <div class="request" ng-repeat="request in requests">
+        <header class="wrapper">
+          <a href="#"><span class="request-title">{{request.title}}</span></a>
+        </header>
+        <div class="wrapper">
+          <span class="request-price"><b>Price:</b> ${{request.price}} - Posted 3 minutes ago</span>
+        </div>
+        <div class="description-wrapper wrapper">
+          <span truncate class="request-description">{{request.description}}</span>
+        </div>
+        <div class="wrapper">
+          <span class="request-tags-label"><b>Tags:</b></span>
+          <a ng-repeat="tag in request.tags"><span class="request-tag">{{tag}}</span></a>
         </div>
       </div>
     </div>
-
-    <!--Feather icon stuff-->
-    <script>
-      feather.replace()
-    </script>
   </body>
+
+  <!--Feather icon stuff-->
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <script>
+    feather.replace()
+  </script>
 </html>
