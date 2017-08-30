@@ -206,7 +206,7 @@ div#accordion-wrapper ul{
 
 div#accordion-wrapper li{
   padding: 10px;
-  border-bottom: solid 2px #e0e0e0;
+  border-bottom: solid 1px #e0e0e0;
   width: 100%;
   list-style: none;
   font-size: 15pt;
