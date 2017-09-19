@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Deed - Share a Meal</title>
+    <!--CSS-->
+    <link type="text/css" rel="stylesheet" href="css/main-style.css">
+    <link type="text/css" rel="stylesheet" href="css/resize.css">
+    <link type="text/css" rel="stylesheet" href="css/request-template.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css">
+
+    <!--Scripts-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.min.js"></script>
+    <script type="text/javascript" src="scripts/main-script.js"></script>
+    <script type="text/javascript" src="scripts/controllers/request-controller.js"></script>
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  </head>
+  <body id="main-container" ng-app="main-app">
+    <header class="large-12 medium-12 row expanded" id="header" ng-app="header-controller">
+      <div class="large-5 medium-5 small-10 column rows">
+        <span id="title">
+          <a href="#">Make Someone's Day</a>
+        </span>
+      </div>
+      <nav class="medium-7 small-4 column" id="nav-bar">
+        <ul>
+          <li><a href="#"><i data-feather="help-circle"></i>About</a></li>
+          <li><a href="#"><i data-feather="plus"></i>Request</a></li>
+          <li class="active"><a href="#"><i data-feather="home"></i>Home</a></li>
+        </ul>
+      </nav>
+      <nav class="small-2 medium-1 column">
+        <button id="menu-button" ng-click="menuOpen = !menuOpen"><i data-feather="menu"></i></button>
+      </nav>
+      <div id="accordion-wrapper" ng-show="menuOpen">
+        <ul>
+          <a href="#"><li><i data-feather="home"></i>Home</li></a>
+          <a href="#"><li><i data-feather="plus"></i>Request</li></a>
+          <a href="#"><li><i data-feather="help-circle"></i>About</li></a>
+        </ul>
+        <div id="click-overlay" ng-click="menuOpen = false"></div>
+      </div>
+    </header>
+
+    <div class="large-12 medium-12 row" id="recents-label">
+      <span>
+        Recent Requests
+      </span>
+    </div>
+    <div class="large-11 medium-12 small-12 expanded row" id="recents-container" ng-controller="request-controller">
+      <div class="large-12 medium-12 expanded row columns" id="options-wrapper">
+        <div class="large-6 medium-6 small-12 column" id="search-wrapper">
+          <i data-feather="filter" ></i>
+          <input placeholder="Filter.." id="search" ></input>
+        </div>
+        <div class="large-6 medium-6 small-12 columns column" id="dropdown-wrapper">
+          <span class="small-2 medium-2">Sort By:</span>
+          <select class="small-8 medium-8">
+            <option value="Newest">Newest</option>
+            <option value="Popular">Popular</option>
+          </select>
+        </div>
+      </div>
+      <div class="request" ng-repeat="request in requests">
+        <header class="wrapper">
+          <a href="#"><span class="request-title">{{request.title}}</span></a>
+        </header>
+        <div class="wrapper">
+          <span class="request-price"><b>Price:</b> ${{request.price}} - Posted 3 minutes ago</span>
+        </div>
+        <div class="description-wrapper wrapper">
+          <span truncate class="request-description">{{request.description}}</span>
+        </div>
+        <div class="wrapper">
+          <span class="request-tags-label"><b>Tags:</b></span>
+          <a ng-repeat="tag in request.tags"><span class="request-tag">{{tag}}</span></a>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!--Feather icon stuff-->
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <script>
+    feather.replace()
+  </script>
+</html>
