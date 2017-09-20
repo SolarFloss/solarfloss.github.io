@@ -152,6 +152,11 @@ html{
   justify-content: center;
   align-content: center;
   flex-direction: column;
+
+  a{
+    text-decoration: none;
+  }
+
   .project-info{
     margin: auto;
     max-width: 300px;

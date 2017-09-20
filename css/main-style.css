@@ -118,6 +118,8 @@ html {
   justify-content: center;
   align-content: center;
   flex-direction: column; }
+  .project-wrapper a {
+    text-decoration: none; }
   .project-wrapper .project-info {
     margin: auto;
     max-width: 300px;
