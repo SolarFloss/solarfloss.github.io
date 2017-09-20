@@ -18,7 +18,7 @@ canvas {
 }
 
 html{
-  background-color: #6d6d6d;
+  background-color: #5e6070;
   overflow: hidden;
 }
 
@@ -155,6 +155,7 @@ html{
 
   a{
     text-decoration: none;
+    text-decoration-line: none;
   }
 
   .project-info{
@@ -164,25 +165,25 @@ html{
     transition: all linear 0.3s;
     text-align: center;
     padding-bottom: 10px;
+    color: white;
 
     &:hover{
       transform: translateY(-2px);
       box-shadow: 0px 2px 2px #424242;
-      color: #81bfc6;
+      color: black;
+      svg{
+        color: black;
+      }
     }
 
     &:last-child svg{
       margin-bottom: -20px;
     }
 
-    &:first-child svg{
-      color: $base-text-color;
-    }
 
     &:first-child p{
       font-weight: bold;
       font-size: 15pt;
-      color: white;
 
       /*Description*/
       &:last-child{
