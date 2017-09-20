@@ -1,23 +1,31 @@
 /*
   Variables
 */
-#particles-js {
+
+$base-text-color: #d8d8d8;
+
+
+
+#particles-js{
   position: absolute;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 canvas {
   display: block;
-  vertical-align: bottom; }
+  vertical-align: bottom;
+}
 
-html {
+html{
   background-color: #6d6d6d;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 /*
   Main Wrapper
 */
-.main-wrapper {
+.main-wrapper{
   overflow: hidden;
   margin: auto;
   margin: 0;
@@ -29,40 +37,52 @@ html {
   border: 6px solid white;
   margin: 20px;
   overflow-y: scroll;
+
   /*Grid*/
+
   display: grid;
   grid-auto-rows: 1fr;
-  grid-template-areas: "top top top top" "mid mid mid mid" "bot bot bot bot"; }
+  grid-template-areas: "top top top top"
+                        "mid mid mid mid"
+                        "bot bot bot bot"
+}
+
 
 /*
   Scrollbar
 */
 ::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
+
 
 /*
   Top row
 */
-.top-row-wrapper {
+.top-row-wrapper{
   grid-area: top;
   grid-column: 1 / 5;
   grid-row: 1/2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px; }
+  grid-gap: 10px;
+}
 
 /*
   Middle row
 */
-.middle-row-wrapper {
+.middle-row-wrapper{
   grid-area: mid;
   grid-column: 1 / 5;
   grid-row: 2 / 3;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  font-size: 25pt; }
-  .middle-row-wrapper .about-wrapper {
+  font-size: 25pt;
+
+  
+
+  .about-wrapper{
     grid-area: about;
     text-align: center;
     display: flex;
@@ -70,8 +90,11 @@ html {
     align-content: center;
     flex-direction: column;
     grid-column: 1 / 2;
-    grid-row: 1; }
-  .middle-row-wrapper .blog-wrapper {
+    grid-row: 1;
+
+  }
+
+  .blog-wrapper{
     grid-area: blog;
     text-align: center;
     display: flex;
@@ -79,8 +102,12 @@ html {
     align-content: center;
     flex-direction: column;
     grid-column: 4 / 5;
-    grid-row: 1; }
-  .middle-row-wrapper .name-wrapper {
+    grid-row: 1;
+
+    
+  }
+
+  .name-wrapper{
     grid-area: name;
     text-align: center;
     display: flex;
@@ -89,61 +116,87 @@ html {
     flex-direction: column;
     grid-column: 2 / 4;
     font-size: 100pt;
-    grid-row: 1; }
-    .middle-row-wrapper .name-wrapper a {
-      color: black; }
-  .middle-row-wrapper a {
+    grid-row: 1;
+
+    a{
+      color: black;
+    }
+  }
+
+  a{
     text-decoration: none;
     color: white;
-    outline: none; }
+    outline: none;
+  }
+}
 
 /*
   Bottom row
 */
-.bottom-row-wrapper {
+.bottom-row-wrapper{
   grid-area: bot;
   grid-column: 1 / 5;
   grid-row: 3 / 4;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px; }
+  grid-gap: 10px;
+}
 
 /*
   Project wrapper
 */
-.project-wrapper {
+.project-wrapper{
   text-align: center;
-  margin: 0;
+  margin:  0;
   display: flex;
   justify-content: center;
   align-content: center;
-  flex-direction: column; }
-  .project-wrapper .project-info {
+  flex-direction: column;
+  .project-info{
     margin: auto;
     max-width: 300px;
     height: auto;
     transition: all linear 0.3s;
     text-align: center;
-    padding-bottom: 10px; }
-    .project-wrapper .project-info:hover {
+    padding-bottom: 10px;
+
+    &:hover{
       transform: translateY(-2px);
       box-shadow: 0px 2px 2px #424242;
-      color: #81bfc6; }
-    .project-wrapper .project-info:last-child svg {
-      margin-bottom: -20px; }
-    .project-wrapper .project-info:first-child svg {
-      color: #d8d8d8; }
-    .project-wrapper .project-info:first-child p {
+      color: #81bfc6;
+    }
+
+    &:last-child svg{
+      margin-bottom: -20px;
+    }
+
+    &:first-child svg{
+      color: $base-text-color;
+    }
+
+    &:first-child p{
       font-weight: bold;
       font-size: 15pt;
       color: white;
-      /*Description*/ }
-      .project-wrapper .project-info:first-child p:last-child {
+
+      /*Description*/
+      &:last-child{
         max-width: 300px;
         margin: auto;
         font-weight: lighter;
         font-size: 12pt;
-        color: #d8d8d8; }
+        color: $base-text-color;
+      }
+
+      
+    }
+  }
+
+  
+
+}
+
+
 
 h1,
 h2,
@@ -153,7 +206,8 @@ h5,
 h6,
 p,
 a,
-span {
-  font-family: 'Reem Kufi', sans-serif; }
+span{
+  font-family: 'Reem Kufi', sans-serif;
+}
 
-/*# sourceMappingURL=main-style.css.map */
+

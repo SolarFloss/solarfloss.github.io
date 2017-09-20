@@ -1,84 +1,94 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <title>Welcome</title>
-    <meta name="viewport" content="width=device-width" />
-    <link type="text/css" rel="stylesheet" href="css/main-style.css">
-    <!--At some point switch from using CDN-->
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css">
-    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-  </head>
-  <body>
-    <div class="main-wrapper">
-      <header class="large-12 column" id="header">
-        <div class="small-4 medium-4 large-4 column">
-          <div class="name">
-            <a href="#">Nick Morris</a>
-          </div>
+    <head>
+        <title>Welcome!</title>
+        <link rel="stylesheet" href="css/main-style.css">
+        <link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
+        <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+        
+        
+    </head>
+    <body>
+        <div id="particles-js"></div>
+        <div class="main-wrapper">
+            <div class="top-row-wrapper">
+                <div class="project-wrapper">
+                    <div class="project-info">
+                        <i class="icon" data-feather="radio"></i>
+                        <p>Reach Podcast Player</p>
+                        <p>This is a rss-based podcast player made in electron and angular!</p>
+                    </div>
+                </div>
+                <div class="project-wrapper">
+                    <div class="project-info">
+                        <i class="icon" data-feather="zap"></i>
+                        <p>Slayer</p>
+                        <p>Twitter game where you get together with up to 10 strangers and fight a boss!</p>
+                    </div>
+                </div>
+                <div class="project-wrapper">
+                        <div class="project-info">
+                                <i class="icon" data-feather="smartphone"></i>
+                                <p>Odyssey/Illiad SMS</p>
+                                <p>Application that works with IlliadSMS(Android) to text from my pc</p>
+                            </div>
+                </div>
+                <div class="project-wrapper">
+                        <div class="project-info">
+                                <i class="icon" data-feather="tv"></i>
+                                <p>Dashboard</p>
+                                <p>A dashboard-esque display that is on my TV that runs on a raspberry pi</p>
+                            </div>
+                </div>
+            </div>
+            <div class="middle-row-wrapper">
+                <div class="about-wrapper">
+                    <a href="#"><span>ABOUT</span></a>
+                </div>
+                <div class="name-wrapper">
+                    <a href="#"><span>MORRIS</span></a>
+                </div>
+                <div class="blog-wrapper">
+                    <a href="#"><span>BLOG</span></a>
+                </div>
+            </div>
+            <div class="bottom-row-wrapper">
+                <div class="project-wrapper">
+                    <div class="project-info">
+                        <i class="icon" data-feather="radio"></i>
+                        <p>Enhancement Suite</p>
+                        <p>Stopping bullying and harrasment is hard, so we got parents to help us out(Hackathon)</p>
+                    </div>
+                </div>
+                <div class="project-wrapper">
+                    <div class="project-info">
+                        <i class="icon" data-feather="zap"></i>
+                        <p>Maze Generator/Solver</p>
+                        <p>Generates and solves mazes using DFS and Randomized Prim's Algorithm</p>
+                    </div>
+                </div>
+                <div class="project-wrapper">
+                        <div class="project-info">
+                                <i class="icon" data-feather="smartphone"></i>
+                                <p>Java Chatroom Client</p>
+                                <p>Basic chatroom client that allows users to talk over a shared directory</p>
+                            </div>
+                </div>
+                <div class="project-wrapper">
+                        <div class="project-info">
+                                <i class="icon" data-feather="tv"></i>
+                                <p>My Two Cents</p>
+                                <p>An app that can earn ~$0.02 a day in bitcoin if it's left running 24/7 :P</p>
+                            </div>
+                </div>
+            </div>
         </div>
-        <nav class="small-8 medium-8 large-8 column">
-          <ul>
-            <li><a href="https://www.youtube.com/channel/UCLNQaRmFlvo4a8tNMCoqKIw"><i data-feather="video"></i></a></li>
-            <li><a href="https://twitter.com/Nickels_7"><i data-feather="twitter"></i></a></li>
-            <li><a href="https://github.com/SolarFloss"><i data-feather="github"></i></a></li>
-          </ul>
-        </nav>
-      </header>
-      <div class="small-12 large-12 column" id="projects-container">
-        <h1>Hello!</h1>
-        <p>I try to make cool things from time to time</p>
-        <div class="small-12 medium-12 large-8 row" id="project-row" >
-          <a class="small-12 large-3 column project" href="https://github.com/SolarFloss/Reach-Podcast-Player">
-            <i class="icon" data-feather="radio">f</i>
-            <h6 class="project-title">Reach Podcast Player</h6>
-            <p class="project-description">This is a rss-based podcast player made in electron and angular!</p>
-          </a>
-          <a class="small-12 large-3 column project" href="https://github.com/SolarFloss/Slayer">
-            <i data-feather="zap"></i>
-            <h6 class="project-title">Slayer</h6>
-            <p class="project-description">Twitter game where you get together with up to 10 strangers and fight a boss!</p>
-          </a>
-          <a class="small-12 large-3 column project" href="https://github.com/SolarFloss/OdysseySMS-Desktop-">
-            <i data-feather="smartphone"></i>
-            <h6 class="project-title">Odyssey/Illiad SMS</h6>
-            <p class="project-description">Desktop application that works with IliadSMS(Android Client), allowing me to text from desktop</p>
-          </a>
-          <a class="small-12 large-3 column project" href="https://github.com/SolarFloss/Dashboard">
-            <i data-feather="tv"></i>
-            <h6 class="project-title">Dashboard</h6>
-            <p class="project-description">A dashboard-esque display that is on my TV that runs on a raspberry pi</p>
-          </a>
-        </div>
-        <!--Terrible Idead Here-->
-        <div class="small-12 medium-12 large-8 row" id="project-row" >
-          <a class="small-12 large-3 column project" href="https://github.com/SolarFloss/Enhancement-Suite">
-            <i data-feather="eye"></i>
-            <h6 class="project-title">Enhancement Suite</h6>
-            <p class="project-description">Stopping bullying and harrasment is hard, so we got parents to help us out (Hackathon Entry)</p>
-          </a>
-          <a class="small-12  large-3 column project" href="https://github.com/SolarFloss/Maze-Solving-and-Generating">
-            <i data-feather="compass"></i>
-            <h6 class="project-title">Maze Generator/Solver</h6>
-            <p class="project-description">Generates and solves mazes using DFS and Randomized Prim's Algorithm</p>
-          </a>
-          <a class="small-12  large-3 column project" href="https://github.com/SolarFloss/Chat-Room">
-            <i data-feather="message-square"></i>
-            <h6 class="project-title">Java Chatroom Client</h6>
-            <p class="project-description">Basic chatroom client that allows users to talk over a shared directory</p>
-          </a>
-          <a class="small-12  large-3 column project" href="https://github.com/SolarFloss/My-Two-Cents">
-            <i data-feather="shopping-cart"></i>
-            <h6 class="project-title">My Two Cents</h6>
-            <p class="project-description">An app that can earn ~$0.02 a day in bitcoin <i>if it's left running 24/7 :P</i></p>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!--Feather icon stuff-->
-    <script>
-      feather.replace()
-    </script>
-  </body>
+        <!--Feather icon stuff-->
+        <script>
+        feather.replace()
+        </script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="scripts/main-script.js"></script>
+    </body>
 </html>
