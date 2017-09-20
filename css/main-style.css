@@ -1,6 +1,17 @@
 /*
   Variables
 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  font-family: 'Reem Kufi', sans-serif; }
+
 #particles-js {
   position: absolute;
   width: 100%;
@@ -11,7 +22,7 @@ canvas {
   vertical-align: bottom; }
 
 html {
-  background-color: #5e6070;
+  background-color: #646782;
   overflow: hidden; }
 
 /*
@@ -62,6 +73,32 @@ html {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   font-size: 25pt; }
+  .middle-row-wrapper .side-button span {
+    position: relative; }
+  .middle-row-wrapper .side-button span:before {
+    content: '';
+    background: rgba(255, 255, 255, 0);
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 100%;
+    height: 2px;
+    transition: all .3s ease; }
+  .middle-row-wrapper .side-button span:hover:before {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.5); }
+  .middle-row-wrapper .side-button span:after {
+    content: '';
+    background: rgba(255, 255, 255, 0);
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 2px;
+    transition: all ease 0.3s; }
+  .middle-row-wrapper .side-button span:hover:after {
+    transform: translateY(5px);
+    background: rgba(255, 255, 255, 0.5); }
   .middle-row-wrapper .about-wrapper {
     grid-area: about;
     text-align: center;
@@ -91,7 +128,7 @@ html {
     font-size: 100pt;
     grid-row: 1; }
     .middle-row-wrapper .name-wrapper a {
-      color: black; }
+      color: #d8d8d8; }
   .middle-row-wrapper a {
     text-decoration: none;
     color: white;
@@ -129,17 +166,20 @@ html {
     text-align: center;
     padding-bottom: 10px;
     color: white; }
+    .project-wrapper .project-info svg {
+      transition: all linear 0.3s; }
     .project-wrapper .project-info:hover {
       transform: translateY(-2px);
       box-shadow: 0px 2px 2px #424242;
-      color: black; }
+      color: white; }
       .project-wrapper .project-info:hover svg {
         color: black; }
     .project-wrapper .project-info:last-child svg {
       margin-bottom: -20px; }
     .project-wrapper .project-info:first-child p {
       font-weight: bold;
-      font-size: 15pt;
+      font-size: 13pt;
+      font-family: 'Varela', sans-serif;
       /*Description*/ }
       .project-wrapper .project-info:first-child p:last-child {
         max-width: 300px;
@@ -147,16 +187,5 @@ html {
         font-weight: lighter;
         font-size: 12pt;
         color: #d8d8d8; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-span {
-  font-family: 'Reem Kufi', sans-serif; }
 
 /*# sourceMappingURL=main-style.css.map */
