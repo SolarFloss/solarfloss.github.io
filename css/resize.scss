@@ -48,12 +48,14 @@ $base-text-color: #d8d8d8;
         border: 0px solid white;
         margin: 0px;
         overflow-y: scroll;
-        display: grid;
+        display: block;
+        /*
         grid-gap: 20px;
         grid-template-rows: 1fr 1fr 5fr;    
         grid-template-areas: "name name name"
                              "links links links"
                              "projects projects projects";
+                             */
                                                      
 
         .row{
