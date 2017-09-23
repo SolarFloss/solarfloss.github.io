@@ -1,0 +1,236 @@
+$base-text-color: #d8d8d8;
+
+
+@media(max-width: 1100px){
+    .middle-row-wrapper{
+        grid-template-areas: ". about blog ."
+                             ". name name ."
+                             ". twitter github .";
+
+        .about-wrapper{
+            grid-area: about;
+        }
+
+        .blog-wrapper{
+            grid-area: blog;
+        }
+
+        .name-wrapper{
+            grid-area: name;
+        }
+
+        .icon-wrapper{
+            text-align: center;
+        }
+
+        .twitter{
+            grid-area: twitter;
+        }
+
+        .github{
+            grid-area: github;
+         }
+    }
+}
+
+
+
+@media(max-width: 770px){
+    .main-wrapper{
+        overflow: hidden;
+        margin: auto;
+        margin: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        position: fixed;
+        border: 6px solid white;
+        margin: 0px;
+        overflow-y: scroll;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-rows: 1fr 1fr 5fr;    
+        grid-template-areas: "name name name"
+                             "links links links"
+                             "projects projects projects";
+                                                     
+
+        .row{
+            display: none;
+        }
+
+        .resize{
+            display: block;
+        }
+
+
+        .name-row-wrapper{
+            grid-area: name;
+            text-align: center;
+            height: auto;
+            .name{
+                padding-left: 5px;
+                font-weight: bold;
+                font-size: 15vw;
+                text-decoration: none;
+                color: $base-text-color;
+                letter-spacing: 10px;
+            }
+        }
+
+        .links-row-wrapper{
+            display: grid;
+            text-align: center;
+            grid-area: links;
+            grid-gap: 50px;
+            grid-template-columns: repeat(4, 1fr);
+            a{
+                font-size: 5vw;
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        .projects-row-wrapper{
+            grid-area: projects;
+            margin: auto;
+            position: relative;
+
+            .project-wrapper{
+                margin-bottom: 30px;
+                position: relative;
+
+                &:after{
+                    content: '';
+                    background: #9799a8;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: -20px;
+                    width: 70%;
+                    height: 1px;
+                    margin: auto;
+                }
+
+                &:last-child{
+                    &:after{
+                        content: '';
+                        background: #9799a8;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: -20px;
+                        width: 60%;
+                        height: 0px;
+                        margin: auto;
+                    }
+                }
+
+                .project-info{
+                    max-width: 90%;
+                    &:first-child p{
+                        font-weight: bold;
+                        font-size: 15pt;
+                        font-family: 'Varela', sans-serif;
+                        /*Description*/
+                        &:last-child{
+                          max-width: 100%;
+                          margin: auto;
+                          font-weight: lighter;
+                          font-size: 13pt;
+                          color: $base-text-color;
+                        }
+                      }
+                }
+            }
+        }
+    }
+}
+
+
+
+//Mobile layout
+@media(max-width: 425px){
+    .main-wrapper{
+        overflow: hidden;
+        margin: auto;
+        margin: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        position: fixed;
+        border: 6px solid white;
+        margin: 0px;
+        overflow-y: scroll;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-rows: 1fr 1fr 5fr;    
+        grid-template-areas: "name name name"
+                             "links links links"
+                             "projects projects projects";
+                                                     
+
+        .row{
+            display: none;
+        }
+
+        .resize{
+            display: block;
+        }
+
+
+        .name-row-wrapper{
+            grid-area: name;
+            text-align: center;
+            height: auto;
+            .name{
+                padding-left: 5px;
+                font-weight: bold;
+                font-size: 15vw;
+                text-decoration: none;
+                color: $base-text-color;
+                letter-spacing: 10px;
+            }
+        }
+
+        .links-row-wrapper{
+            display: grid;
+            text-align: center;
+            grid-area: links;
+            grid-gap: 50px;
+            grid-template-columns: repeat(4, 1fr);
+            a{
+                font-size: 5vw;
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        .projects-row-wrapper{
+            grid-area: projects;
+            margin: auto;
+
+            .project-wrapper{
+                margin-bottom: 30px;
+                .project-info{
+                    max-width: 300px;
+                    &:first-child p{
+                        font-weight: bold;
+                        font-size: 13pt;
+                        font-family: 'Varela', sans-serif;
+                        /*Description*/
+                        &:last-child{
+                          max-width: 100%;
+                          margin: auto;
+                          font-weight: lighter;
+                          font-size: 12pt;
+                          color: $base-text-color;
+                        }
+                      }
+                }
+            }
+        }
+    }
+}

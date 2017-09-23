@@ -55,7 +55,11 @@ html{
   grid-auto-rows: 1fr;
   grid-template-areas: "top top top top"
                         "mid mid mid mid"
-                        "bot bot bot bot"
+                        "bot bot bot bot";
+
+  .resize{
+    display: none;
+  }
 }
 
 
@@ -170,9 +174,30 @@ html{
     font-size: 100pt;
     grid-row: 1;
 
-    a{
+    display: grid;
+    grid-template-areas: "twitter name name github";
+    grid-gap: 30px;
+
+    .name{
       color: $base-text-color;
+      grid-area: name;
     }
+
+
+    .icon-wrapper{
+      svg{
+        width: 30px;
+        height: auto;
+        transform: translateY(-30px);
+        color: $base-text-color;
+        transition: all ease 0.3s;
+
+        &:hover{
+          transform: translateY(-33px);
+        }
+      }
+    }
+
   }
 
   a{
@@ -221,19 +246,55 @@ html{
     text-align: center;
     padding-bottom: 10px;
     color: white;
+    position: relative;
 
     svg{
-      transition: all linear 0.3s;
+      transition: all ease 0.3s;
+      transform: translateY(0px);
+    }
+
+    &:after{
+      animation: grow 1s;
+      content:'';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: rgba(255,255,255,0);
     }
 
     &:hover{
-      transform: translateY(-2px);
-      box-shadow: 0px 2px 2px #424242;
       color: white;
       svg{
-        color: black;
+        animation: hover 2.5s infinite; /* IE 10+, Fx 29+ */
+        transition-timing-function: ease-out;
+        transform: translateY(0px);
+        transition: all ease 1s;
+      }
+ 
+      
+
+      
+      
+
+      &:after{
+        content:'';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        //background: rgba(255,255,255,1);
       }
     }
+
+
+    /* Put this in it's own file and then import it*/
+    @keyframes hover{
+      50%{transform: translateY(-5px);}
+    }
+
 
     &:last-child svg{
       margin-bottom: -20px;
@@ -252,8 +313,6 @@ html{
         font-size: 12pt;
         color: $base-text-color;
       }
-
-      
     }
   }
 
@@ -262,7 +321,6 @@ html{
 }
 
 
-
-
-
+/* Mobile and resize stuff*/
+@import "resize.scss";
 

@@ -44,6 +44,8 @@ html {
   display: grid;
   grid-auto-rows: 1fr;
   grid-template-areas: "top top top top" "mid mid mid mid" "bot bot bot bot"; }
+  .main-wrapper .resize {
+    display: none; }
 
 /*
   Scrollbar
@@ -126,9 +128,21 @@ html {
     flex-direction: column;
     grid-column: 2 / 4;
     font-size: 100pt;
-    grid-row: 1; }
-    .middle-row-wrapper .name-wrapper a {
-      color: #d8d8d8; }
+    grid-row: 1;
+    display: grid;
+    grid-template-areas: "twitter name name github";
+    grid-gap: 30px; }
+    .middle-row-wrapper .name-wrapper .name {
+      color: #d8d8d8;
+      grid-area: name; }
+    .middle-row-wrapper .name-wrapper .icon-wrapper svg {
+      width: 30px;
+      height: auto;
+      transform: translateY(-30px);
+      color: #d8d8d8;
+      transition: all ease 0.3s; }
+      .middle-row-wrapper .name-wrapper .icon-wrapper svg:hover {
+        transform: translateY(-33px); }
   .middle-row-wrapper a {
     text-decoration: none;
     color: white;
@@ -165,15 +179,39 @@ html {
     transition: all linear 0.3s;
     text-align: center;
     padding-bottom: 10px;
-    color: white; }
+    color: white;
+    position: relative;
+    /* Put this in it's own file and then import it*/ }
     .project-wrapper .project-info svg {
-      transition: all linear 0.3s; }
+      transition: all ease 0.3s;
+      transform: translateY(0px); }
+    .project-wrapper .project-info:after {
+      animation: grow 1s;
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: rgba(255, 255, 255, 0); }
     .project-wrapper .project-info:hover {
-      transform: translateY(-2px);
-      box-shadow: 0px 2px 2px #424242;
       color: white; }
       .project-wrapper .project-info:hover svg {
-        color: black; }
+        animation: hover 2.5s infinite;
+        /* IE 10+, Fx 29+ */
+        transition-timing-function: ease-out;
+        transform: translateY(0px);
+        transition: all ease 1s; }
+      .project-wrapper .project-info:hover:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0; }
+@keyframes hover {
+  50% {
+    transform: translateY(-5px); } }
     .project-wrapper .project-info:last-child svg {
       margin-bottom: -20px; }
     .project-wrapper .project-info:first-child p {
@@ -187,5 +225,164 @@ html {
         font-weight: lighter;
         font-size: 12pt;
         color: #d8d8d8; }
+
+/* Mobile and resize stuff*/
+@media (max-width: 1100px) {
+  .middle-row-wrapper {
+    grid-template-areas: ". about blog ." ". name name ." ". twitter github ."; }
+    .middle-row-wrapper .about-wrapper {
+      grid-area: about; }
+    .middle-row-wrapper .blog-wrapper {
+      grid-area: blog; }
+    .middle-row-wrapper .name-wrapper {
+      grid-area: name; }
+    .middle-row-wrapper .icon-wrapper {
+      text-align: center; }
+    .middle-row-wrapper .twitter {
+      grid-area: twitter; }
+    .middle-row-wrapper .github {
+      grid-area: github; } }
+@media (max-width: 770px) {
+  .main-wrapper {
+    overflow: hidden;
+    margin: auto;
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+    border: 6px solid white;
+    margin: 0px;
+    overflow-y: scroll;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: 1fr 1fr 5fr;
+    grid-template-areas: "name name name" "links links links" "projects projects projects"; }
+    .main-wrapper .row {
+      display: none; }
+    .main-wrapper .resize {
+      display: block; }
+    .main-wrapper .name-row-wrapper {
+      grid-area: name;
+      text-align: center;
+      height: auto; }
+      .main-wrapper .name-row-wrapper .name {
+        padding-left: 5px;
+        font-weight: bold;
+        font-size: 15vw;
+        text-decoration: none;
+        color: #d8d8d8;
+        letter-spacing: 10px; }
+    .main-wrapper .links-row-wrapper {
+      display: grid;
+      text-align: center;
+      grid-area: links;
+      grid-gap: 50px;
+      grid-template-columns: repeat(4, 1fr); }
+      .main-wrapper .links-row-wrapper a {
+        font-size: 5vw;
+        text-decoration: none;
+        color: white; }
+    .main-wrapper .projects-row-wrapper {
+      grid-area: projects;
+      margin: auto;
+      position: relative; }
+      .main-wrapper .projects-row-wrapper .project-wrapper {
+        margin-bottom: 30px;
+        position: relative; }
+        .main-wrapper .projects-row-wrapper .project-wrapper:after {
+          content: '';
+          background: #9799a8;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -20px;
+          width: 70%;
+          height: 1px;
+          margin: auto; }
+        .main-wrapper .projects-row-wrapper .project-wrapper:last-child:after {
+          content: '';
+          background: #9799a8;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -20px;
+          width: 60%;
+          height: 0px;
+          margin: auto; }
+        .main-wrapper .projects-row-wrapper .project-wrapper .project-info {
+          max-width: 90%; }
+          .main-wrapper .projects-row-wrapper .project-wrapper .project-info:first-child p {
+            font-weight: bold;
+            font-size: 15pt;
+            font-family: 'Varela', sans-serif;
+            /*Description*/ }
+            .main-wrapper .projects-row-wrapper .project-wrapper .project-info:first-child p:last-child {
+              max-width: 100%;
+              margin: auto;
+              font-weight: lighter;
+              font-size: 13pt;
+              color: #d8d8d8; } }
+@media (max-width: 425px) {
+  .main-wrapper {
+    overflow: hidden;
+    margin: auto;
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+    border: 6px solid white;
+    margin: 0px;
+    overflow-y: scroll;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: 1fr 1fr 5fr;
+    grid-template-areas: "name name name" "links links links" "projects projects projects"; }
+    .main-wrapper .row {
+      display: none; }
+    .main-wrapper .resize {
+      display: block; }
+    .main-wrapper .name-row-wrapper {
+      grid-area: name;
+      text-align: center;
+      height: auto; }
+      .main-wrapper .name-row-wrapper .name {
+        padding-left: 5px;
+        font-weight: bold;
+        font-size: 15vw;
+        text-decoration: none;
+        color: #d8d8d8;
+        letter-spacing: 10px; }
+    .main-wrapper .links-row-wrapper {
+      display: grid;
+      text-align: center;
+      grid-area: links;
+      grid-gap: 50px;
+      grid-template-columns: repeat(4, 1fr); }
+      .main-wrapper .links-row-wrapper a {
+        font-size: 5vw;
+        text-decoration: none;
+        color: white; }
+    .main-wrapper .projects-row-wrapper {
+      grid-area: projects;
+      margin: auto; }
+      .main-wrapper .projects-row-wrapper .project-wrapper {
+        margin-bottom: 30px; }
+        .main-wrapper .projects-row-wrapper .project-wrapper .project-info {
+          max-width: 300px; }
+          .main-wrapper .projects-row-wrapper .project-wrapper .project-info:first-child p {
+            font-weight: bold;
+            font-size: 13pt;
+            font-family: 'Varela', sans-serif;
+            /*Description*/ }
+            .main-wrapper .projects-row-wrapper .project-wrapper .project-info:first-child p:last-child {
+              max-width: 100%;
+              margin: auto;
+              font-weight: lighter;
+              font-size: 12pt;
+              color: #d8d8d8; } }
 
 /*# sourceMappingURL=main-style.css.map */
