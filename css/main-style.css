@@ -270,7 +270,6 @@ html {
     .main-wrapper .resize {
       display: block; }
     .main-wrapper .name-row-wrapper {
-      grid-area: name;
       text-align: center;
       height: auto; }
       .main-wrapper .name-row-wrapper .name {
@@ -283,7 +282,6 @@ html {
     .main-wrapper .links-row-wrapper {
       display: grid;
       text-align: center;
-      grid-area: links;
       grid-gap: 50px;
       grid-template-columns: repeat(4, 1fr); }
       .main-wrapper .links-row-wrapper a {
@@ -291,7 +289,6 @@ html {
         text-decoration: none;
         color: white; }
     .main-wrapper .projects-row-wrapper {
-      grid-area: projects;
       margin: auto;
       position: relative; }
       .main-wrapper .projects-row-wrapper .project-wrapper {
@@ -343,10 +340,14 @@ html {
     border: 0px solid white;
     margin: 0px;
     overflow-y: scroll;
-    display: grid;
+    display: block;
     grid-gap: 20px;
     grid-template-rows: 1fr 1fr 5fr;
-    grid-template-areas: "name name name" "links links links" "projects projects projects"; }
+    /*
+    grid-template-areas: "name name name"
+                         "links links links"
+                         "projects projects projects";
+                         */ }
     .main-wrapper .row {
       display: none; }
     .main-wrapper .resize {
@@ -366,7 +367,7 @@ html {
       display: grid;
       text-align: center;
       grid-area: links;
-      grid-gap: 50px;
+      grid-gap: 1px;
       grid-template-columns: repeat(4, 1fr); }
       .main-wrapper .links-row-wrapper a {
         font-size: 5vw;

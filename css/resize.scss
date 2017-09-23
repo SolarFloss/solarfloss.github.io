@@ -68,7 +68,7 @@ $base-text-color: #d8d8d8;
 
 
         .name-row-wrapper{
-            grid-area: name;
+            //grid-area: name;
             text-align: center;
             height: auto;
             .name{
@@ -84,7 +84,7 @@ $base-text-color: #d8d8d8;
         .links-row-wrapper{
             display: grid;
             text-align: center;
-            grid-area: links;
+            //grid-area: links;
             grid-gap: 50px;
             grid-template-columns: repeat(4, 1fr);
             a{
@@ -95,7 +95,7 @@ $base-text-color: #d8d8d8;
         }
 
         .projects-row-wrapper{
-            grid-area: projects;
+            //grid-area: projects;
             margin: auto;
             position: relative;
 
@@ -166,12 +166,14 @@ $base-text-color: #d8d8d8;
         border: 0px solid white;
         margin: 0px;
         overflow-y: scroll;
-        display: grid;
+        display: block;
         grid-gap: 20px;
         grid-template-rows: 1fr 1fr 5fr;    
+        /*
         grid-template-areas: "name name name"
                              "links links links"
                              "projects projects projects";
+                             */
                                                      
 
         .row{
@@ -201,7 +203,7 @@ $base-text-color: #d8d8d8;
             display: grid;
             text-align: center;
             grid-area: links;
-            grid-gap: 50px;
+            grid-gap: 1px;
             grid-template-columns: repeat(4, 1fr);
             a{
                 font-size: 5vw;
